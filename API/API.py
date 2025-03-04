@@ -1,9 +1,6 @@
 from Models import Post
 import datetime
 
-def api_instance():
-    return True
-
 class API:
     def __init__(self, config=None):
         self.config = config
