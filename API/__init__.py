@@ -1,1 +1,2 @@
-from .api_instance import api_instance
+from .API import API as _API
+api_instance = _API()
