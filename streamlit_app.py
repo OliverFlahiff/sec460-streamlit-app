@@ -1,6 +1,5 @@
 import streamlit as st
 import requests
-import json
 
 state_names=["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
 
@@ -66,14 +65,12 @@ state_abbrev = {
 
 st.title("Weather Alert Viewer")
 st.write("___")
+
 state = st.selectbox("Select a State", state_names, placeholder="Choose a state")
-
-
 alerts = requests.get("https://api.weather.gov/alerts/active?area=" + state_abbrev[state])
 alert_json = alerts.json()
 
 st.header("Weather Alerts in " + state)
-
 
 a_count = 0
 while a_count < len(alert_json["features"]):
@@ -107,6 +104,7 @@ while a_count < len(alert_json["features"]):
     with st.expander(event, expanded=True, icon=wicon):
         st.subheader(headline)
         st.write(description)
-        a_count+=1
+    a_count+=1
+
 st.write("Powered by the [National Weather Service](https://www.weather.gov/)") 
 
