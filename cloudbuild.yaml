@@ -14,4 +14,4 @@ steps:
 substitutions:
   _BRANCH_NAME: "${BRANCH_NAME}"
 options:
-  logging: NONE
+  logging: CLOUD_LOGGING_ONLY

@@ -81,7 +81,7 @@ while a_count < len(alert_json["features"]):
 
     if "Freeze" in event:
         wicon = ":material/severe_cold:"
-    elif "Flood" in event or "Hydrologic" in event:
+    elif "Flood" in event or "Hydrologic" in event or "Storm Surge" in event:
         wicon = ":material/flood:"
     elif "Wind" in event:
         wicon = ":material/air:"
@@ -99,6 +99,20 @@ while a_count < len(alert_json["features"]):
         wicon = ":material/cyclone:"
     elif "Storm" in event:
         wicon = ":material/storm:" 
+    elif "Hurricane" in event:
+        wicon = ":material/hurricane:" 
+    elif "Tornado" in event:
+        wicon = ":material/tornado:"    
+    elif "Thunder" in event:
+        wicon = ":material/thunderstorm:"    
+    elif "Hail" in event:
+        wicon = ":material/weather_hail:" 
+    elif "Tide" in event:
+        wicon = ":material/waves:" 
+    elif "Blizzard" in event:
+        wicon = ":material/weather_snowy:"
+    elif "Heat" in event:
+        wicon = ":material/heat:"   
     else:
         wicon = ":material/error:"
     with st.expander(event, expanded=True, icon=wicon):
