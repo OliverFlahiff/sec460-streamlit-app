@@ -1,8 +1,7 @@
-# 🎈 Blank app template
+# Weather Alert Viewer App
 
-A simple Streamlit app template for you to modify!
+This app uses Streamlit and calls the National Weather Service API to get weather alerts for the selected state.
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
 
 ### How to run it on your own machine
 
